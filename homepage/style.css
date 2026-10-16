@@ -1,0 +1,50 @@
+:root {
+  --bg: #ffffff;
+  --text: #1a1a1a;
+  --muted: #666666;
+  --line: #dddddd;
+  --link: #1e5a82;
+  color-scheme: light;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0 auto;
+  max-width: 720px;
+  padding: 48px 16px;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Hiragino Sans", "Yu Gothic", "Noto Sans JP", sans-serif;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+a { color: var(--link); }
+
+/* 名前 */
+h1 { margin: 0; font-size: 1.8rem; font-weight: 600; }
+.kana { margin-left: 0.3em; font-size: 0.95rem; font-weight: 400; color: var(--muted); }
+
+/* ページ切り替え */
+nav {
+  display: flex;
+  gap: 1.5em;
+  margin: 12px 0 32px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--line);
+}
+nav a { color: var(--link); }
+nav .lang { margin-left: auto; }
+/* 表示中のページはリンクにせず、普通の文字として表示 */
+nav a[aria-current="page"] { color: var(--text); text-decoration: none; pointer-events: none; }
+
+/* 身分・研究領域 */
+.info { display: grid; grid-template-columns: 6em 1fr; gap: 8px 16px; margin: 0; }
+.info dt { color: var(--muted); }
+.info dd { margin: 0; }
+
+/* 論文・講演リスト */
+.list { margin: 0; padding-left: 1.6em; }
+.list li { margin-bottom: 12px; }
+.list li::marker { color: var(--muted); }
